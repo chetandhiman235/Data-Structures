@@ -1,10 +1,11 @@
 function minMovesToSeat(seats, students) {
-    let seatsSortedArray = seats.sort();
-    let studentsSortedArray = students.sort();
+    let seatsSortedArray = seats.sort((a, b) => a - b);
+    let studentsSortedArray = students.sort((a, b) => a - b);
     let sum =0;
     for(let index=0; index< studentsSortedArray.length; index++){
         sum += Math.abs(studentsSortedArray[index] - seatsSortedArray[index]);
     }
+
     return sum;
 };
 
